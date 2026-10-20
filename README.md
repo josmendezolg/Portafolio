@@ -7,7 +7,7 @@ Construido solo con **HTML5, CSS3, Bootstrap 5 y JavaScript** en un único archi
 Navbar con botón Dark/Light · Hero · Stack tecnológico · Proyectos con filtros (Web, App, Diseño) · Experiencia · Videos · Contacto (EmailJS) · Footer.
 
 ## 🚀 Ver en línea
-[https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/](https://github.com/josmendezolg/Portafolio)
+(https://github.com/josmendezolg/Portafolio)
 
 ## 🛠️ Personalización
 - Experiencia: edita rol, empresa y fecha en la sección `#experiencia`.
