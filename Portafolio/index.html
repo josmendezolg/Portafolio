@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jose Alfredo Mendez Ramos | Portafolio</title>
+<meta name="description" content="Portafolio de Jose Alfredo Mendez Ramos, estudiante de Ingeniería en Sistemas: desarrollo web, apps y diseño de interfaces.">
+<meta name="author" content="Jose Alfredo Mendez Ramos">
+<meta property="og:title" content="Jose Alfredo Mendez Ramos | Portafolio">
+<meta property="og:description" content="Desarrollo web, apps y diseño de interfaces minimalistas y responsivas.">
+<meta property="og:type" content="website">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" rel="stylesheet">
+<style>
+:root[data-theme="dark"]{
+  --bg:#04060c; --bg-soft:rgba(8,12,24,.72); --card:rgba(10,16,32,.82);
+  --text:#f2fbff; --muted:#b9d4e6; --a1:#00f0ff; --a2:#fcee0a; --a3:#39ff14; --a4:#ff2bd6;
+  --border:#00f0ff; --glow:0 0 14px rgba(0,240,255,.55);
+  --nav:rgba(4,6,12,.88); --input:#0b1226; --matrix:57,255,20; --fade:4,6,12;
+}
+:root[data-theme="light"]{
+  --bg:#f3f6fb; --bg-soft:rgba(255,255,255,.78); --card:rgba(255,255,255,.9);
+  --text:#050a16; --muted:#1d2a44; --a1:#0047c7; --a2:#8a6a00; --a3:#007a2f; --a4:#b0007f;
+  --border:#0047c7; --glow:0 0 12px rgba(0,71,199,.35);
+  --nav:rgba(243,246,251,.92); --input:#ffffff; --matrix:0,140,60; --fade:243,246,251;
+}
+html{background:var(--bg);scroll-behavior:smooth}
+body{background:transparent;color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;transition:color .3s}
+#matrix{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+h1,h2,h3,h4,h5,h6,p,li,label,span,small,div{color:inherit}
+.text-muted-c{color:var(--muted)!important}
+section{padding:80px 0;background:var(--bg-soft);border-top:1px solid color-mix(in srgb,var(--border) 35%,transparent)}
+.section-title{font-weight:800;letter-spacing:1px;text-align:center;margin-bottom:2.5rem;color:var(--a1);text-shadow:var(--glow)}
+.section-title i,.section-title .emo{color:var(--a2)}
+/* navbar */
+.navbar{background:var(--nav);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);box-shadow:var(--glow)}
+.navbar-brand,.nav-link{color:var(--text)!important;font-weight:600}
+.navbar-brand span{color:var(--a1)}
+.nav-link:hover{color:var(--a1)!important;text-shadow:var(--glow)}
+.navbar-toggler{border-color:var(--border)}
+.navbar-toggler-icon{background-image:none;display:flex;align-items:center;justify-content:center}
+.navbar-toggler-icon::before{content:"\f0c9";font-family:"Font Awesome 6 Free";font-weight:900;color:var(--a1)}
+.btn-mode{background:transparent;border:1px solid var(--a2);color:var(--a2)!important;border-radius:20px;padding:.3rem .9rem;font-weight:700}
+.btn-mode:hover{background:var(--a2);color:#000!important}
+/* hero */
+#inicio{min-height:100vh;display:flex;align-items:center;padding-top:110px}
+.hero-photo{width:260px;height:260px;object-fit:cover;border-radius:50%;border:3px solid var(--a1);box-shadow:var(--glow),0 0 40px rgba(255,43,214,.3)}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;color:var(--text)}
+.hero .role{color:var(--a2);font-weight:700;font-size:1.3rem}
+.hero .glitch{color:var(--a1);text-shadow:2px 0 var(--a4),-2px 0 var(--a3)}
+.btn-neon{background:transparent;color:var(--a1)!important;border:2px solid var(--a1);border-radius:8px;font-weight:700;box-shadow:var(--glow);padding:.55rem 1.4rem}
+.btn-neon:hover{background:var(--a1);color:#000!important}
+/* cards */
+.c-card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--glow);height:100%;transition:transform .25s}
+.c-card:hover{transform:translateY(-6px)}
+.c-card .card-body{color:var(--text)}
+.tech{text-align:center;padding:1.3rem .5rem}
+.tech i{font-size:2.8rem;display:block;margin-bottom:.5rem}
+.tech span{font-weight:700;color:var(--text)}
+/* projects */
+.filters .btn{background:transparent;border:1px solid var(--a1);color:var(--a1);margin:.2rem;font-weight:700}
+.filters .btn.active,.filters .btn:hover{background:var(--a1);color:#000}
+.cover{height:190px;border-radius:13px 13px 0 0;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.cover img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover}
+.cover .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3.6rem;color:#fff}
+.cover .ph svg{width:100%;height:100%}
+.g1{background:linear-gradient(135deg,#ff2bd6,#3a0ca3)}.g2{background:linear-gradient(135deg,#00f0ff,#0047c7)}
+.g3{background:linear-gradient(135deg,#39ff14,#006d3a)}.g4{background:linear-gradient(135deg,#fcee0a,#d35400)}
+.badge-c{background:var(--a4);color:#fff;font-weight:700}
+.p-item.hide{display:none}
+.btn-link-c{color:var(--a1)!important;font-weight:700;text-decoration:none}
+.btn-link-c:hover{text-shadow:var(--glow)}
+/* experience */
+.exp-icon{font-size:2.2rem;color:var(--a3);margin-bottom:.6rem}
+.exp-company{color:var(--a2);font-weight:700}
+/* videos */
+.ratio{border:2px solid var(--border);border-radius:10px;box-shadow:var(--glow);overflow:hidden}
+.video-title{color:var(--a2);font-weight:700;margin-top:.8rem}
+/* form */
+.form-card{max-width:680px;margin:auto;background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.25),var(--glow);padding:2rem}
+.input-group-text{background:var(--input);border:1px solid var(--border);color:var(--a1)}
+.form-control{background:var(--input);color:var(--text);border:1px solid var(--border)}
+.form-control:focus{background:var(--input);color:var(--text);border-color:var(--a2);box-shadow:0 0 0 .2rem rgba(252,238,10,.25)}
+.form-control::placeholder{color:var(--muted);opacity:.75}
+.btn-send{background:dodgerblue;color:#fff;border:none;font-weight:700;padding:.6rem 2.4rem;border-radius:8px}
+.btn-send:hover{background:#1a7de0;color:#fff}
+#msgOk{display:none;color:var(--a3);font-weight:800;text-align:center;margin-top:1rem}
+/* footer */
+footer{background:var(--nav);border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(0,240,255,.2);padding:2.5rem 0}
+footer a{color:var(--a1);font-size:1.9rem;margin:0 .7rem;transition:.2s}
+footer a:nth-child(2){color:var(--a2)}footer a:nth-child(3){color:var(--a3)}
+footer a:hover{transform:scale(1.2);text-shadow:var(--glow)}
+footer p{color:var(--text)}
+#top{position:fixed;right:18px;bottom:18px;display:none;z-index:20}
+:focus-visible{outline:3px solid var(--a2);outline-offset:2px}
+@media(max-width:576px){.hero-photo{width:190px;height:190px}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<canvas id="matrix" aria-hidden="true"></canvas>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#inicio">&lt;<span>JM</span>/&gt; 💻</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#stack">Stack</a></li>
+        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+        <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        <li class="nav-item ms-lg-3"><button id="modeBtn" class="btn btn-mode" type="button" aria-label="Cambiar modo"><i class="fa-solid fa-sun"></i> <span id="modeTxt">Modo Light</span></button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header id="inicio" class="hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-md-4 text-center">
+        <img class="hero-photo" src="https://lms2.oymas.edu.do/assets/avatar/assets/files/XK6kohK9oBsYqJm24-SISN-8-006-avatar.jpg" alt="Foto de perfil de Jose Alfredo Mendez Ramos">
+      </div>
+      <div class="col-md-8 text-center text-md-start">
+        <p class="mb-1" style="color:var(--a3);font-weight:700">👋 Hola, soy</p>
+        <h1><span class="glitch">Jose Alfredo Mendez Ramos</span></h1>
+        <p class="role">🚀 Ingeniería en Sistemas</p>
+        <p class="lead">🧠 Estudiante de Ingeniería en Sistemas enfocado en el desarrollo web, la creación de interfaces minimalistas y responsivas, y la implementación de buenas prácticas de programación, accesibilidad y optimización SEO.</p>
+        <div class="mt-4">
+          <a href="#proyectos" class="btn btn-neon me-2 mb-2"><i class="fa-solid fa-folder-open"></i> Ver proyectos</a>
+          <a href="#contacto" class="btn btn-neon mb-2"><i class="fa-solid fa-envelope"></i> Contáctame</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="stack">
+  <div class="container">
+    <h2 class="section-title"><span class="emo">⚙️</span> Stack Tecnológico</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-4 col-lg-2"><div class="c-card tech"><i class="devicon-python-plain colored"></i><span>Python</span></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="c-card tech"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="c-card tech"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="c-card tech"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="c-card tech"><i class="devicon-react-original colored"></i><span>React</span></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="c-card tech"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos">
+  <div class="container">
+    <h2 class="section-title"><span class="emo">📂</span> Proyectos</h2>
+    <div class="filters text-center mb-4">
+      <button class="btn active" data-f="all">Todos</button>
+      <button class="btn" data-f="web">🌐 Web</button>
+      <button class="btn" data-f="app">📱 App</button>
+      <button class="btn" data-f="diseno">🎨 Diseño</button>
+    </div>
+    <div class="row g-4">
+      <!-- WEB -->
+      <div class="col-md-6 col-lg-4 p-item" data-c="web"><div class="c-card">
+        <div class="cover g2"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fjosmendezolg.github.io%2FDesarrollo-web-OYM%2F?w=700&h=400" alt="Vista previa de Desarrollo Web OYM" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><div class="ph"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="60" y="22" width="280" height="150" rx="10" fill="#0b1226" stroke="#fff" stroke-opacity=".7"/><rect x="60" y="22" width="280" height="22" rx="10" fill="#fff" fill-opacity=".9"/><circle cx="76" cy="33" r="4" fill="#ff2bd6"/><circle cx="90" cy="33" r="4" fill="#fcee0a"/><circle cx="104" cy="33" r="4" fill="#39ff14"/><rect x="74" y="56" width="120" height="14" rx="3" fill="#00f0ff"/><rect x="74" y="78" width="180" height="8" rx="3" fill="#fff" fill-opacity=".6"/><rect x="74" y="92" width="150" height="8" rx="3" fill="#fff" fill-opacity=".4"/><rect x="74" y="116" width="76" height="46" rx="5" fill="#ff2bd6"/><rect x="158" y="116" width="76" height="46" rx="5" fill="#fcee0a"/><rect x="242" y="116" width="84" height="46" rx="5" fill="#39ff14"/></svg></div></div>
+        <div class="card-body"><span class="badge badge-c">Web</span><h5 class="mt-2">Desarrollo Web OYM</h5><p class="text-muted-c">Sitio web desplegado en GitHub Pages.</p><a class="btn-link-c" href="https://josmendezolg.github.io/Desarrollo-web-OYM/" target="_blank" rel="noopener">Ver proyecto <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div></div>
+      <div class="col-md-6 col-lg-4 p-item" data-c="web"><div class="c-card">
+        <div class="cover g1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPLsf6mCKkQ4Ns2IOGdnTL6oDQR4KNIAdUbw&s" alt="Portada del proyecto Web 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><div class="ph"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="60" y="22" width="280" height="150" rx="10" fill="#0b1226" stroke="#fff" stroke-opacity=".7"/><rect x="60" y="22" width="280" height="22" rx="10" fill="#fff" fill-opacity=".9"/><circle cx="76" cy="33" r="4" fill="#ff2bd6"/><circle cx="90" cy="33" r="4" fill="#fcee0a"/><circle cx="104" cy="33" r="4" fill="#39ff14"/><circle cx="120" cy="104" r="30" fill="none" stroke="#00f0ff" stroke-width="12"/><circle cx="120" cy="104" r="30" fill="none" stroke="#ff2bd6" stroke-width="12" stroke-dasharray="60 130"/><rect x="180" y="110" width="22" height="50" fill="#39ff14"/><rect x="210" y="90" width="22" height="70" fill="#00f0ff"/><rect x="240" y="72" width="22" height="88" fill="#ff2bd6"/><rect x="270" y="98" width="22" height="62" fill="#fcee0a"/><rect x="74" y="54" width="100" height="10" rx="3" fill="#fff" fill-opacity=".6"/></svg></div></div>
+        <div class="card-body"><span class="badge badge-c">Web</span><h5 class="mt-2">Proyecto Web 2</h5><p class="text-muted-c">Interfaz web responsiva con buenas prácticas.</p></div></div></div>
+      <div class="col-md-6 col-lg-4 p-item" data-c="web"><div class="c-card">
+        <div class="cover g3"><img src="https://i.ytimg.com/vi/ukiGFmZ32YA/maxresdefault.jpg" alt="Portada del proyecto Web 3" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><div class="ph"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="60" y="22" width="280" height="150" rx="10" fill="#0b1226" stroke="#fff" stroke-opacity=".7"/><rect x="60" y="22" width="280" height="22" rx="10" fill="#fff" fill-opacity=".9"/><circle cx="76" cy="33" r="4" fill="#ff2bd6"/><circle cx="90" cy="33" r="4" fill="#fcee0a"/><circle cx="104" cy="33" r="4" fill="#39ff14"/><rect x="74" y="54" width="130" height="16" rx="3" fill="#fff"/><rect x="74" y="78" width="110" height="16" rx="3" fill="#00f0ff"/><rect x="74" y="104" width="90" height="10" rx="3" fill="#fff" fill-opacity=".5"/><rect x="74" y="130" width="60" height="22" rx="11" fill="#ff2bd6"/><rect x="240" y="54" width="86" height="108" rx="10" fill="#fff" fill-opacity=".15" stroke="#00f0ff"/><text x="283" y="116" text-anchor="middle" fill="#00f0ff" font-family="monospace" font-size="22">&lt;/&gt;</text></svg></div></div>
+        <div class="card-body"><span class="badge badge-c">Web</span><h5 class="mt-2">Proyecto Web 3</h5><p class="text-muted-c">Práctica de maquetación y JavaScript.</p></div></div></div>
+      <!-- APPS -->
+      <div class="col-md-6 col-lg-4 p-item" data-c="app"><div class="c-card">
+        <div class="cover g4"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fbetwarrior.bet.ar%2F?w=700&h=400" alt="Vista previa App de Apuestas" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><div class="ph"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="150" y="10" width="100" height="175" rx="16" fill="#0b1226" stroke="#fff" stroke-opacity=".8" stroke-width="2"/><rect x="185" y="16" width="30" height="5" rx="2.5" fill="#fff" fill-opacity=".5"/><text x="200" y="48" text-anchor="middle" fill="#fcee0a" font-family="sans-serif" font-size="11" font-weight="700">EN VIVO</text><circle cx="200" cy="82" r="20" fill="#fff"/><path d="M200 62l8 7-3 10h-10l-3-10z" fill="#0b1226"/><rect x="164" y="112" width="72" height="16" rx="5" fill="#39ff14"/><rect x="164" y="134" width="72" height="16" rx="5" fill="#00f0ff"/><rect x="164" y="156" width="72" height="16" rx="5" fill="#ff2bd6"/></svg></div></div>
+        <div class="card-body"><span class="badge badge-c">App</span><h5 class="mt-2">App de Apuestas</h5><p class="text-muted-c">Concepto de app de apuestas deportivas.</p><a class="btn-link-c" href="https://betwarrior.bet.ar/" target="_blank" rel="noopener">Referencia <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div></div>
+      <div class="col-md-6 col-lg-4 p-item" data-c="app"><div class="c-card">
+        <div class="cover g1"><img src="https://imgs.search.brave.com/NBqwpf1uU4dVfmR7SNwOA67_9D0qESLZm8S3rv3z98M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jbGFz/c25vdGVib29rYXBp/Lm9uZW5vdGUuY29t/L0ltYWdlcy9DTkhv/bWVfSW1hZ2UzX3Yy/LnBuZw" alt="Portada App de Notas" loading="lazy" referrerpolicy="no-referrer" onerror="if(!this.dataset.r){this.dataset.r=1;this.src='https://classnotebookapi.onenote.com/Images/CNHome_Image3_v2.png'}else{this.remove()}"><div class="ph"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="150" y="10" width="100" height="175" rx="16" fill="#0b1226" stroke="#fff" stroke-opacity=".8" stroke-width="2"/><rect x="185" y="16" width="30" height="5" rx="2.5" fill="#fff" fill-opacity=".5"/><rect x="164" y="34" width="72" height="26" rx="5" fill="#fcee0a"/><rect x="170" y="42" width="44" height="5" rx="2" fill="#0b1226"/><rect x="164" y="66" width="72" height="26" rx="5" fill="#00f0ff"/><rect x="170" y="74" width="52" height="5" rx="2" fill="#0b1226"/><rect x="164" y="98" width="72" height="26" rx="5" fill="#ff2bd6"/><rect x="170" y="106" width="38" height="5" rx="2" fill="#fff"/><circle cx="222" cy="158" r="13" fill="#39ff14"/><text x="222" y="164" text-anchor="middle" font-size="18" font-weight="700" fill="#0b1226">+</text></svg></div></div>
+        <div class="card-body"><span class="badge badge-c">App</span><h5 class="mt-2">App de Notas</h5><p class="text-muted-c">Aplicación para crear y organizar notas.</p></div></div></div>
+      <div class="col-md-6 col-lg-4 p-item" data-c="app"><div class="c-card">
+        <div class="cover g3"><img src="https://imgs.search.brave.com/3vbkeJUp9z2W9lRAAgVtIzm4IqPDLvZI3KabYPL7xKA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS8yc0lUU3FhbGRx/VDJ2RTJSVnphRjcy/RlRXTWlFQ0E4UEZy/bUdpRkZMblFGNkFL/aV9CZGhLSUtDSlJt/dm83V1pxaFhNTFFa/RDhEY2g5VkNJWkRZ/Q1ZpQT13NTI2LWgy/OTY" alt="Portada App de Wallet" loading="lazy" referrerpolicy="no-referrer" onerror="if(!this.dataset.r){this.dataset.r=1;this.src='https://play-lh.googleusercontent.com/2sITSqaldqT2vE2RVzaF72FTWMiECA8PFrmGiFFLnQF6AKi_BdhKIKCJRmvo7WZqhXMLQZD8Dch9VCIZDYCViA=w526-h296'}else{this.remove()}"><div class="ph"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="150" y="10" width="100" height="175" rx="16" fill="#0b1226" stroke="#fff" stroke-opacity=".8" stroke-width="2"/><rect x="185" y="16" width="30" height="5" rx="2.5" fill="#fff" fill-opacity=".5"/><rect x="162" y="34" width="76" height="46" rx="8" fill="#39ff14"/><text x="170" y="52" fill="#0b1226" font-family="sans-serif" font-size="8" font-weight="700">SALDO</text><text x="170" y="70" fill="#0b1226" font-family="sans-serif" font-size="14" font-weight="800">$2,450</text><rect x="164" y="92" width="72" height="14" rx="4" fill="#fff" fill-opacity=".25"/><rect x="164" y="112" width="72" height="14" rx="4" fill="#fff" fill-opacity=".25"/><rect x="164" y="132" width="72" height="14" rx="4" fill="#fff" fill-opacity=".25"/><circle cx="174" cy="99" r="4" fill="#ff2bd6"/><circle cx="174" cy="119" r="4" fill="#00f0ff"/><circle cx="174" cy="139" r="4" fill="#fcee0a"/></svg></div></div>
+        <div class="card-body"><span class="badge badge-c">App</span><h5 class="mt-2">App de Wallet</h5><p class="text-muted-c">Billetera digital móvil con control de saldos.</p></div></div></div>
+      <!-- DISEÑO -->
+      <div class="col-md-6 col-lg-4 p-item" data-c="diseno"><div class="c-card">
+        <div class="cover g2"><img src="https://imgs.search.brave.com/iBKFuvx_fPmHIVzzgn2Cw0O-JLhTACBbznhTgGBg7GM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/dmVjdG9yLXByZW1p/dW0vZWxlbWVudG9z/LWludGVyZmF6LXVz/dWFyaW8tYXBsaWNh/Y2lvbi1tb3ZpbC1i/YW5jYXJpYS1hbmFs/aXNpcy1maW5hbmNp/ZXJvLXBsYW50aWxs/YXMtZ3VpLWN1ZW50/YXMtYmFuY2FyaWFz/LWRlcG9zaXRvcy1z/YWxkb3MtY3JlZGl0/by1leGNsdXNpdm8t/a2l0LWRpc2Vuby1u/ZXVtb3BoaWMtdWkt/dXgtZ2VzdGlvbi1j/b21wb25lbnRlcy1u/YXZlZ2FjaW9uXzky/MDktMzMyMS5qcGc_/c2VtdD1haXNfaHli/cmlkJnc9NzQwJnE9/ODA" alt="Portada UI Banca Móvil" loading="lazy" referrerpolicy="no-referrer" onerror="if(!this.dataset.r){this.dataset.r=1;this.src='https://img.freepik.com/vector-premium/elementos-interfaz-usuario-aplicacion-movil-bancaria-analisis-financiero-plantillas-gui-cuentas-bancarias-depositos-saldos-credito-exclusivo-kit-diseno-neumophic-ui-ux-gestion-componentes-navegacion_9209-3321.jpg?semt=ais_hybrid&w=740&q=80'}else{this.remove()}"><div class="ph"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="70" y="14" width="100" height="165" rx="14" fill="#0b1226" stroke="#fff"/><rect x="80" y="30" width="80" height="44" rx="8" fill="#00f0ff"/><rect x="86" y="56" width="40" height="5" rx="2" fill="#0b1226"/><rect x="80" y="84" width="80" height="12" rx="4" fill="#fff" fill-opacity=".3"/><rect x="80" y="102" width="80" height="12" rx="4" fill="#fff" fill-opacity=".3"/><rect x="80" y="120" width="80" height="12" rx="4" fill="#fff" fill-opacity=".3"/><rect x="190" y="30" width="140" height="22" rx="6" fill="#fff" fill-opacity=".9"/><rect x="190" y="62" width="64" height="48" rx="8" fill="#ff2bd6"/><rect x="266" y="62" width="64" height="48" rx="8" fill="#fcee0a"/><rect x="190" y="122" width="140" height="42" rx="8" fill="#39ff14"/></svg></div></div>
+        <div class="card-body"><span class="badge badge-c">Diseño</span><h5 class="mt-2">UI Banca Móvil</h5><p class="text-muted-c">Kit de interfaz para app bancaria y análisis financiero.</p></div></div></div>
+      <div class="col-md-6 col-lg-4 p-item" data-c="diseno"><div class="c-card">
+        <div class="cover g4"><img src="https://imgs.search.brave.com/4pLj6W6rbfUNC_uT2xBipDZujIdXhwYRMjO74gx9RDM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/dmVjdG9yLXByZW1p/dW0vZWxlbWVudG9z/LWd1aS1pbnRlcmZh/ei11c3VhcmlvLWFw/bGljYWNpb24tbW92/aWwtZmluYW56YXMt/a2l0LWhlcnJhbWll/bnRhcy11eF85MjA5/LTM5NTAuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw" alt="Portada UI Finanzas" loading="lazy" referrerpolicy="no-referrer" onerror="if(!this.dataset.r){this.dataset.r=1;this.src='https://img.freepik.com/vector-premium/elementos-gui-interfaz-usuario-aplicacion-movil-finanzas-kit-herramientas-ux_9209-3950.jpg?semt=ais_hybrid&w=740&q=80'}else{this.remove()}"><div class="ph"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="40" y="20" width="320" height="150" rx="12" fill="#0b1226" stroke="#fff"/><polyline points="60,140 110,110 160,122 210,84 260,96 330,50" fill="none" stroke="#00f0ff" stroke-width="4"/><polyline points="60,150 110,136 160,140 210,120 260,126 330,100" fill="none" stroke="#ff2bd6" stroke-width="3"/><rect x="60" y="34" width="70" height="10" rx="3" fill="#fff" fill-opacity=".7"/><circle cx="330" cy="50" r="6" fill="#fcee0a"/></svg></div></div>
+        <div class="card-body"><span class="badge badge-c">Diseño</span><h5 class="mt-2">UI Finanzas</h5><p class="text-muted-c">Componentes GUI para app móvil de finanzas.</p></div></div></div>
+      <div class="col-md-6 col-lg-4 p-item" data-c="diseno"><div class="c-card">
+        <div class="cover g1"><img src="https://imgs.search.brave.com/pqVAihhbTyLLDzYTCuAebvY7SuDiUKodH06VDaAj4Ik/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/dmVjdG9yLWdyYXRp/cy9wbGFudGlsbGEt/YXBsaWNhY2lvbi1t/b2RvLW9zY3Vyby1k/ZWdyYWRhZG9fMjMt/MjE1MDUxMzMxMy5q/cGc_c2VtdD1haXNf/aHlicmlkJnc9NzQw" alt="Portada Plantilla Modo Oscuro" loading="lazy" referrerpolicy="no-referrer" onerror="if(!this.dataset.r){this.dataset.r=1;this.src='https://img.freepik.com/vector-gratis/plantilla-aplicacion-modo-oscuro-degradado_23-2150513313.jpg?semt=ais_hybrid&w=740'}else{this.remove()}"><div class="ph"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="140" y="10" width="120" height="175" rx="18" fill="#05070d" stroke="#00f0ff" stroke-width="2"/><rect x="152" y="30" width="96" height="30" rx="8" fill="#ff2bd6"/><rect x="152" y="70" width="96" height="14" rx="4" fill="#fff" fill-opacity=".25"/><rect x="152" y="92" width="96" height="14" rx="4" fill="#fff" fill-opacity=".25"/><rect x="152" y="120" width="40" height="20" rx="10" fill="#39ff14"/><circle cx="182" cy="130" r="8" fill="#05070d"/><rect x="152" y="152" width="96" height="20" rx="6" fill="#00f0ff"/><circle cx="90" cy="60" r="22" fill="#fcee0a" fill-opacity=".9"/><circle cx="100" cy="54" r="18" fill="#05070d"/></svg></div></div>
+        <div class="card-body"><span class="badge badge-c">Diseño</span><h5 class="mt-2">Plantilla Modo Oscuro</h5><p class="text-muted-c">Plantilla de aplicación en modo oscuro.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="container">
+    <h2 class="section-title"><span class="emo">🏢</span> Experiencia Laboral</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4"><div class="c-card text-center"><div class="card-body"><div class="exp-icon"><i class="fa-solid fa-headset"></i></div><h5>Soporte TI</h5><p class="exp-company">Intec</p><p class="text-muted-c">Atención a usuarios, resolución de incidencias y soporte técnico.</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card text-center"><div class="card-body"><div class="exp-icon"><i class="fa-solid fa-shield-halved"></i></div><h5>Ciberseguridad</h5><p class="exp-company">American Express</p><p class="text-muted-c">Protección de sistemas y buenas prácticas de seguridad.</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card text-center"><div class="card-body"><div class="exp-icon"><i class="fa-solid fa-network-wired"></i></div><h5>Ingeniería en Sistemas</h5><p class="exp-company">Claro</p><p class="text-muted-c">Soporte y gestión de infraestructura de sistemas.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="container">
+    <h2 class="section-title"><span class="emo">🎥</span> Videos Destacados</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body">
+        <div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/zSGBwxgsb8Y" title="Tipos de datos y variables en MAUI" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="video-title">🎥 Tutorial: Tipos de datos y variables en MAUI</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body">
+        <div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/3aqKnA3zgP4" title="Variables locales y globales, ContentPage, StackLayout y Button" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="video-title">📱 Taller: Variables locales/globales, ContentPage y StackLayout</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body">
+        <div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/LbDNhdg0HXA" title="Estructura de control if/else y login básico" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="video-title">🔐 Curso: Estructura if/else y login básico</p></div></div></div>
+
+      <!-- ===== VIDEOS ADICIONALES (quita los comentarios y cambia VIDEO_ID) =====
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="Video 4" loading="lazy" allowfullscreen></iframe></div><p class="video-title">🎬 Video 4</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID_5" title="Video 5" loading="lazy" allowfullscreen></iframe></div><p class="video-title">🎬 Video 5</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID_6" title="Video 6" loading="lazy" allowfullscreen></iframe></div><p class="video-title">🎬 Video 6</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID_7" title="Video 7" loading="lazy" allowfullscreen></iframe></div><p class="video-title">🎬 Video 7</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID_8" title="Video 8" loading="lazy" allowfullscreen></iframe></div><p class="video-title">🎬 Video 8</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID_9" title="Video 9" loading="lazy" allowfullscreen></iframe></div><p class="video-title">🎬 Video 9</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID_10" title="Video 10" loading="lazy" allowfullscreen></iframe></div><p class="video-title">🎬 Video 10</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID_11" title="Video 11" loading="lazy" allowfullscreen></iframe></div><p class="video-title">🎬 Video 11</p></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="c-card"><div class="card-body"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID_12" title="Video 12" loading="lazy" allowfullscreen></iframe></div><p class="video-title">🎬 Video 12</p></div></div></div>
+      ===== FIN VIDEOS ADICIONALES ===== -->
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container">
+    <h2 class="section-title"><span class="emo">✉️</span> Contacto</h2>
+    <form id="contactForm" class="form-card" novalidate>
+      <div class="mb-3">
+        <label for="nombre" class="form-label fw-bold">Nombre completo</label>
+        <div class="input-group"><span class="input-group-text"><i class="fa-solid fa-user"></i></span><input type="text" class="form-control" id="nombre" name="nombre" placeholder="👤 Tu nombre" required></div>
+        <div class="invalid-feedback d-block" id="e-nombre"></div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label fw-bold">Correo electrónico</label>
+        <div class="input-group"><span class="input-group-text"><i class="fa-solid fa-envelope"></i></span><input type="email" class="form-control" id="email" name="email" placeholder="📧 tucorreo@ejemplo.com" required></div>
+        <div class="invalid-feedback d-block" id="e-email"></div>
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label fw-bold">Teléfono</label>
+        <div class="input-group"><span class="input-group-text"><i class="fa-solid fa-phone"></i></span><input type="tel" class="form-control" id="telefono" name="telefono" placeholder="📞 809-000-0000" required></div>
+        <div class="invalid-feedback d-block" id="e-telefono"></div>
+      </div>
+      <div class="mb-3">
+        <label for="mensaje" class="form-label fw-bold">Mensaje</label>
+        <div class="input-group"><span class="input-group-text"><i class="fa-solid fa-pen"></i></span><textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="✉️ Escribe tu mensaje" required></textarea></div>
+        <div class="invalid-feedback d-block" id="e-mensaje"></div>
+      </div>
+      <div class="text-center"><button type="submit" class="btn btn-send">Enviar</button></div>
+      <div id="msgOk" role="status">✅ Mensaje enviado correctamente</div>
+    </form>
+  </div>
+</section>
+
+<footer class="text-center">
+  <div class="container">
+    <div class="mb-3">
+      <a href="https://www.linkedin.com/in/jmendez06rml" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://youtube.com/@jhma-e5r?si=KRlhOWNWoug4pJKK" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <!-- Cambia esta URL por tu perfil real de GitHub -->
+      <a href="https://github.com/josmendezolg" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <p class="mb-3">💻 © 2026 Jose Alfredo Mendez Ramos · Hecho con ❤️ y neón</p>
+    <button class="btn btn-neon" id="topBtn" type="button"><i class="fa-solid fa-arrow-up"></i> Volver arriba</button>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+/* ---------- Modo Dark/Light ---------- */
+const root=document.documentElement,modeBtn=document.getElementById('modeBtn');
+function applyTheme(t){
+  root.setAttribute('data-theme',t);
+  modeBtn.innerHTML=t==='dark'?'<i class="fa-solid fa-sun"></i> <span>Modo Light</span>':'<i class="fa-solid fa-moon"></i> <span>Modo Dark</span>';
+  try{localStorage.setItem('theme',t)}catch(e){}
+}
+let saved='dark';try{saved=localStorage.getItem('theme')||'dark'}catch(e){}
+applyTheme(saved);
+modeBtn.addEventListener('click',()=>applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
+
+/* ---------- Fondo Matrix translúcido ---------- */
+const cv=document.getElementById('matrix'),cx=cv.getContext('2d');
+const chars='アイウエオカキクケコサシスセソ0123456789<>/{}$#ABCDEF'.split('');
+let fs=16,cols,drops;
+function initMatrix(){
+  cv.width=innerWidth;cv.height=innerHeight;
+  cols=Math.floor(cv.width/fs);drops=Array(cols).fill(0).map(()=>Math.random()*-50);
+}
+function drawMatrix(){
+  const cs=getComputedStyle(root);
+  const m=cs.getPropertyValue('--matrix').trim(),f=cs.getPropertyValue('--fade').trim();
+  cx.fillStyle=`rgba(${f},.12)`;cx.fillRect(0,0,cv.width,cv.height);
+  cx.font=fs+'px monospace';
+  for(let i=0;i<cols;i++){
+    cx.fillStyle=`rgba(${m},.45)`;
+    cx.fillText(chars[Math.floor(Math.random()*chars.length)],i*fs,drops[i]*fs);
+    if(drops[i]*fs>cv.height&&Math.random()>.975)drops[i]=0;
+    drops[i]++;
+  }
+}
+initMatrix();addEventListener('resize',initMatrix);
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(drawMatrix,55);
+
+/* ---------- Filtros de proyectos ---------- */
+document.querySelectorAll('.filters .btn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filters .btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  const f=b.dataset.f;
+  document.querySelectorAll('.p-item').forEach(i=>i.classList.toggle('hide',f!=='all'&&i.dataset.c!==f));
+}));
+
+/* ---------- Formulario (EmailJS) ---------- */
+const EMAILJS_PUBLIC_KEY='TU_PUBLIC_KEY', EMAILJS_SERVICE='TU_SERVICE_ID', EMAILJS_TEMPLATE='TU_TEMPLATE_ID';
+const DEST='juancito.pena@gmail.com';
+const form=document.getElementById('contactForm'),ok=document.getElementById('msgOk');
+function setErr(id,msg){const e=document.getElementById('e-'+id);e.textContent=msg;e.style.color='var(--a4)';return !msg}
+form.addEventListener('submit',async ev=>{
+  ev.preventDefault();ok.style.display='none';
+  const v=n=>form[n].value.trim();
+  const a=setErr('nombre',v('nombre').length<3?'Ingresa tu nombre completo.':'');
+  const b=setErr('email',/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))?'':'Ingresa un correo válido.');
+  const c=setErr('telefono',/^[0-9+\-\s()]{7,}$/.test(v('telefono'))?'':'Ingresa un teléfono válido.');
+  const d=setErr('mensaje',v('mensaje').length<5?'Escribe tu mensaje.':'');
+  if(!(a&&b&&c&&d))return;
+  const params={from_name:v('nombre'),from_email:v('email'),phone:v('telefono'),message:v('mensaje'),to_email:DEST};
+  try{
+    if(EMAILJS_PUBLIC_KEY==='TU_PUBLIC_KEY')throw new Error('EmailJS sin configurar');
+    await emailjs.send(EMAILJS_SERVICE,EMAILJS_TEMPLATE,params,{publicKey:EMAILJS_PUBLIC_KEY});
+    ok.style.display='block';form.reset();
+  }catch(err){
+    // Respaldo: abre el cliente de correo si EmailJS aún no está configurado
+    location.href=`mailto:${DEST}?subject=${encodeURIComponent('Contacto portafolio: '+params.from_name)}&body=${encodeURIComponent(params.message+'\n\nTel: '+params.phone+'\nCorreo: '+params.from_email)}`;
+  }
+});
+
+/* ---------- Volver arriba ---------- */
+document.getElementById('topBtn').addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
